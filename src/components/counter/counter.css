@@ -1,0 +1,11 @@
+.counter {
+  margin: 12px;
+  padding: 12px;
+  border: 1px solid black;
+  width: fit-content;
+}
+
+.counter__buttons {
+  display: flex;
+  gap: 12px;
+}

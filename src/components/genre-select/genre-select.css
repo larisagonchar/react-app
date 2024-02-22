@@ -1,0 +1,13 @@
+.genre-select {
+  display: flex;
+  text-transform: uppercase;
+  margin-top: 20px;
+  gap: 20px;
+  color: #ffffff;
+}
+
+.genre-select__item:hover, .genre-select__item_selected {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #F65261;
+}

@@ -13,7 +13,7 @@ const GenreSelect = ({ genres, selectedGenre, onSelect }) => {
   });
 
   return (
-    <div className='genre-select'>
+    <div className='genre-select' data-testid='genre-select'>
       {genreList}
     </div>
   )

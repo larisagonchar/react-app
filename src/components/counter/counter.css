@@ -1,12 +1,14 @@
+@import '../../styles/sizes.css';
+
 .counter {
-  margin: 12px;
-  padding: 12px;
-  color: white;
-  border: 1px solid black;
+  margin: var(--indentation-size);
+  padding: var(--indentation-size);
+  color: var(--white-color);
+  border: var(--border-size) solid black;
   width: fit-content;
 }
 
 .counter__buttons {
   display: flex;
-  gap: 12px;
+  gap: var(--gap-size);
 }

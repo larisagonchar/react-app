@@ -1,7 +1,20 @@
+@import 'styles/sizes.css';
+@import 'styles/colors.css';
+
 body {
   margin: 0;
-  padding: 20px 40px;
-  background-color: #555555;
+  padding: var(--indentation-size);
+  background-color: var(--body-background-color);
   box-sizing: border-box;
   font-size: 1rem;
+}
+
+input, button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  text-transform: uppercase;
 }

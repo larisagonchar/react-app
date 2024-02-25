@@ -7,14 +7,14 @@ describe('SearchForm component', () => {
   
   test('renders correctly initial value', () => {
     render(<SearchForm searchQuery='Search' onSearch={onItemSearchMock} />);
-    const textElement = screen.getByPlaceholderText('What do you want to watch?');
+    const textElement = screen.getByLabelText('search');
 
     expect(textElement).toHaveValue('Search');
   });
 
   test('call onSearch with search input after clicking on submit button', () => {
     render(<SearchForm searchQuery='' onSearch={onItemSearchMock} />);
-    const textElement = screen.getByPlaceholderText('What do you want to watch?');
+    const textElement = screen.getByLabelText('search');
     userEvent.type(textElement, 'movie');
 
     const button = screen.getByRole('button');
@@ -25,7 +25,7 @@ describe('SearchForm component', () => {
 
   test('call onSearch with search input after clicking on Enter button', () => {
     render(<SearchForm searchQuery='' onSearch={onItemSearchMock} />);
-    const textElement = screen.getByPlaceholderText('What do you want to watch?');
+    const textElement = screen.getByLabelText('search');
 
     userEvent.type(textElement, 'movie');
     userEvent.type(textElement, '{Enter}');

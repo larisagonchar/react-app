@@ -4,32 +4,38 @@ import userEvent from '@testing-library/user-event';
 
 describe('SearchForm component', () => {
   const onItemSearchMock = jest.fn();
-  
-  test('renders correctly initial value', () => {
+
+  test('should render correctly initial value', () => {
     render(<SearchForm searchQuery='Search' onSearch={onItemSearchMock} />);
     const textElement = screen.getByLabelText('search');
 
     expect(textElement).toHaveValue('Search');
   });
 
-  test('call onSearch with search input after clicking on submit button', () => {
+  test('should call onSearch with search input after clicking on submit button', () => {
+    // arrange
     render(<SearchForm searchQuery='' onSearch={onItemSearchMock} />);
     const textElement = screen.getByLabelText('search');
-    userEvent.type(textElement, 'movie');
-
     const button = screen.getByRole('button');
-    userEvent.click(button);
 
+    // act
+    userEvent.type(textElement, 'movie');
+    userEvent.click(button);
+    
+    // assert
     expect(onItemSearchMock).toHaveBeenCalledWith('movie');
   });
 
-  test('call onSearch with search input after clicking on Enter button', () => {
+  test('should call onSearch with search input after clicking on Enter button', () => {
+    // arrange
     render(<SearchForm searchQuery='' onSearch={onItemSearchMock} />);
     const textElement = screen.getByLabelText('search');
 
+    // act
     userEvent.type(textElement, 'movie');
     userEvent.type(textElement, '{Enter}');
 
+    // assert
     expect(onItemSearchMock).toHaveBeenCalledWith('movie');
   });
 });

@@ -1,0 +1,36 @@
+@import 'sizes.css';
+@import 'colors.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  padding: var(--indentation-size);
+  background-color: var(--body-background-color);
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button {
+  text-transform: uppercase;
+}

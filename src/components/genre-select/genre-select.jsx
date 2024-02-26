@@ -1,5 +1,6 @@
 import React from 'react';
 import './genre-select.css';
+import classNames from 'classnames';
 
 const GenreSelect = ({ genres, selectedGenre, onSelect }) => {
   const handleSelect = (e) => {
@@ -8,12 +9,12 @@ const GenreSelect = ({ genres, selectedGenre, onSelect }) => {
   }
 
   const genreList = genres.map(item => {
-    const spanClass = `genre-select__item ${item === selectedGenre ? 'genre-select__item_selected' : ''}`;
-    return <span key={item} className={spanClass} onClick={handleSelect}>{item}</span>;
+    const spanClass = classNames('genre-select__item', { 'genre-select__item_selected': item.item === selectedGenre });
+    return <span key={item.id} className={spanClass} onClick={handleSelect}>{item.item}</span>;
   });
 
   return (
-    <div className='genre-select'>
+    <div className='genre-select' data-testid='genre-select'>
       {genreList}
     </div>
   )

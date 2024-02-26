@@ -2,9 +2,10 @@ import './App.css';
 import Counter from './components/counter/counter';
 import GenreSelect from './components/genre-select/genre-select';
 import SearchForm from './components/search-form/search-form';
+import { GENRES_LIST } from './constants/genre.constants';
 
 function App() {
-  const genreList = ['ALL', 'Action', 'Adventure', 'Comedy', 'Crime', 'Drama', 'Family', 'Thriller'];
+  const genreList = GENRES_LIST;
   const selectedGenre = 'Comedy';
   
   const handleSearch = (search) => {

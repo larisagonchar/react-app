@@ -1,0 +1,10 @@
+@import '../../styles/sizes.css';
+@import '../../styles/colors.css';
+
+.button {
+  width: 20%;
+  color: var(--white-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size);
+  background-color: var(--primary-color);
+}

@@ -14,11 +14,15 @@ const MovieTile = ({ movie, onClick }) => {
     e.stopPropagation();
   };
 
+  const handleMovieTileClick = () => {
+    onClick(movie);
+  }
+
   return (
-    <div data-testid="movie-tile" className='movie-tile' onClick={onClick}>
+    <div data-testid='movie-tile' className='movie-tile' onClick={handleMovieTileClick}>
       <img src={imageSrc} alt='not-found-poster' onError={() => setImageSrc(defaultImg)}/>
 
-      <div className="movie-tile__context-menu" onClick={handleContextMenuClick}>
+      <div className='movie-tile__context-menu' onClick={handleContextMenuClick}>
         <div></div>
         <div></div>
         <div></div>

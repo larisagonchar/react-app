@@ -12,7 +12,7 @@ describe('MovieDetails component', () => {
     poster_path: ''
   };
 
-  test('render movie details', () => {
+  test('should render movie details', () => {
     const { asFragment } = render(<MovieDetails selectedMovie={movie} />);
 
     expect(asFragment).toMatchSnapshot();

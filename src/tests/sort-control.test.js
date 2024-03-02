@@ -1,23 +1,25 @@
 import { render, screen } from '@testing-library/react';
 import SortControl from '../components/sort-control/sort-control';
 import userEvent from '@testing-library/user-event';
+import { SORT_CONTROLS } from '../constants/sort-control.constants';
 
 describe('SortControl component', () => {  
-  test('render sort control', () => {
+  test('should render sort control', () => {
     const { asFragment } = render(<SortControl selectedControl={'Title'} />);
 
     expect(asFragment).toMatchSnapshot();
   });
 
-  test('call onSelect when user click on item', () => {
+  test('should call onSelect when user click on item', () => {
+    // arrange
     const onItemClickMock = jest.fn();
-    const option = 'Release Date';
-    render(<SortControl selectedControl={'Title'} onSelect={onItemClickMock}/>);
-
+    render(<SortControl selectedControl={SORT_CONTROLS[0].value} onSelect={onItemClickMock}/>);
     const select = screen.getByTestId('select');
 
-    userEvent.selectOptions(select, option);
+    // act
+    userEvent.selectOptions(select, SORT_CONTROLS[1].value);
 
-    expect(onItemClickMock).toHaveBeenCalledWith(option);
+    // assert
+    expect(onItemClickMock).toHaveBeenCalledWith(SORT_CONTROLS[1].value);
   });
 });

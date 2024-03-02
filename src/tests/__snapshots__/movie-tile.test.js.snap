@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MovieTile component render movie tile 1`] = `[Function]`;
+
+exports[`MovieTile component should render movie tile 1`] = `[Function]`;

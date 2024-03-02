@@ -10,20 +10,22 @@ describe('MovieTile component', () => {
     poster_path: ''
   };
 
-  test('render movie tile', () => {
+  test('should render movie tile', () => {
     const { asFragment } = render(<MovieTile movie={movie} />);
 
     expect(asFragment).toMatchSnapshot();
   });
 
   test('call onClick when user click on item', () => {
+    // arrange
     const onItemClickMock = jest.fn();
     render(<MovieTile movie={movie} onClick={onItemClickMock} />);
-
     const container = screen.getByTestId('movie-tile');
-
+    
+    // act
     userEvent.click(container);
-
+    
+    // assert
     expect(onItemClickMock).toHaveBeenCalledWith(movie);
   });
 });

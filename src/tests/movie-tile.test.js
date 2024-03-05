@@ -1,17 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import MovieTile from '../components/movie-tile/movie-tile';
 import userEvent from '@testing-library/user-event';
+import { movieTileMock } from '../__mocks__/movie-tile';
 
 describe('MovieTile component', () => {
-  const movie = {
-    genres: ['Action', 'Adventure'],
-    release_date: 2004,
-    title: 'Pulp Fiction',
-    poster_path: ''
-  };
-
   test('should render movie tile', () => {
-    const { asFragment } = render(<MovieTile movie={movie} />);
+    const { asFragment } = render(<MovieTile movie={movieTileMock} />);
 
     expect(asFragment).toMatchSnapshot();
   });
@@ -19,13 +13,13 @@ describe('MovieTile component', () => {
   test('call onClick when user click on item', () => {
     // arrange
     const onItemClickMock = jest.fn();
-    render(<MovieTile movie={movie} onClick={onItemClickMock} />);
+    render(<MovieTile movie={movieTileMock} onClick={onItemClickMock} />);
     const container = screen.getByTestId('movie-tile');
     
     // act
     userEvent.click(container);
     
     // assert
-    expect(onItemClickMock).toHaveBeenCalledWith(movie);
+    expect(onItemClickMock).toHaveBeenCalledWith(movieTileMock);
   });
 });

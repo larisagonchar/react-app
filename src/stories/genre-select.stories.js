@@ -19,15 +19,15 @@ export default {
 
 export const Default = {
   args: {
-    genres: GENRES_LIST
+    genres: GENRES_LIST,
+    onSelect: () => {}
   }
 };
 
 export const SelectGenre = {
   args: {
-    genres: GENRES_LIST,
-    selectedGenre: GENRES_LIST[2].item,
-    onSelect: () => {}
+    ...Default.args,
+    selectedGenre: GENRES_LIST[2].item
   },
   play: async({ canvasElement }) => {
     const canvas = within(canvasElement);

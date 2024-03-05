@@ -1,0 +1,10 @@
+.movie-details__header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary-color);
+  font-size: var(--font-size-medium);
+}
+
+.movie-details__header-img {
+  cursor: pointer;
+}

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import './movie-tile.css';
-import defaultImg from '../../../assets/no-image.png';
 import ContextMenu from '../context-menu/context-menu';
+import MovieGenre from '../movie-details/elements/movie-genre/movie-genre';
+import MovieImage from '../movie-details/elements/movie-image/movie-image';
+import MovieTileInfo from './elements/movie-tile-info';
 
 const MovieTile = ({ movie, onClick }) => {
-  const genreList = movie.genres.join(', ');
-
   const [isContextMenuOpen, setIsContextMenuOpen] = useState(false);
-  const [imageSrc, setImageSrc] = useState(movie.poster_path);
 
   const handleContextMenuClick = (e) => {
     setIsContextMenuOpen(!isContextMenuOpen);
@@ -20,7 +19,7 @@ const MovieTile = ({ movie, onClick }) => {
 
   return (
     <div data-testid='movie-tile' className='movie-tile' onClick={handleMovieTileClick}>
-      <img src={imageSrc} alt='not-found-poster' onError={() => setImageSrc(defaultImg)}/>
+      <MovieImage image={movie.poster_path} />
 
       <div className='movie-tile__context-menu' onClick={handleContextMenuClick}>
         <div></div>
@@ -28,14 +27,11 @@ const MovieTile = ({ movie, onClick }) => {
         <div></div>
       </div>
 
-      {isContextMenuOpen && <ContextMenu onClick={handleContextMenuClick}/>}
+      {isContextMenuOpen && <ContextMenu onClick={handleContextMenuClick} />}
 
-      <div className='movie-tile__info-container'>
-        <span className='movie-tile__info-title'>{movie.title}</span>
-        <span className='movie-tile__info-year'>{new Date(movie.release_date).getFullYear()}</span>
-      </div>
-
-      <span className='movie-tile__info-list'>{genreList}</span>
+      <MovieTileInfo title={movie.title} releaseDate={movie.release_date} />
+      
+      <MovieGenre genres={movie.genres} />
     </div>
   );
 }

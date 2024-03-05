@@ -21,12 +21,14 @@
   cursor: pointer;
 }
 
-.context-menu__item {
+.context-menu__button {
   width: 100%;
+  background-color: transparent;
+  text-transform: initial;
+  color: var(--white-color);
   padding: var(--indentation-size-small);
 }
 
-.context-menu__item:hover {
+.context-menu__button:hover {
   background-color: var(--primary-color);
-  cursor: pointer;
 }

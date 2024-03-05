@@ -14,32 +14,11 @@
   gap: var(--gap-size-large);
 }
 
-.movie-details__header {
-  display: flex;
-  justify-content: space-between;
-  color: var(--primary-color);
-  font-size: var(--font-size-medium);
-}
-
-.movie-details__header-img {
-  cursor: pointer;
-}
-
-.movie-details__image {
-  max-width: var(--width);
-}
-
 .movie-details__title {
   font-size: var(--font-size-large);
   color: var(--white-color);
   font-weight: var(--font-weight);
   text-transform: uppercase;
-}
-
-.movie-details__genre {
-  color: var(--white-color);
-  opacity: 0.6;
-  font-weight: var(--font-weight);
 }
 
 .movie-details__rating {
@@ -52,6 +31,7 @@
 
 .movie-details__container {
   display: flex;
+  align-items: center;
   gap: var(--gap-size-medium);
 }
 

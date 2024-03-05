@@ -3,11 +3,11 @@ import './genre-select.css';
 import classNames from 'classnames';
 
 const GenreSelect = ({ genres, selectedGenre, onSelect }) => {
-  const [genre, setSelectedGenre] = useState(selectedGenre);
+  const [genre, setGenre] = useState(selectedGenre);
 
   const handleSelect = (e) => {
     const value = e.target.textContent;
-    setSelectedGenre(value);
+    setGenre(value);
     onSelect(value);
   }
 

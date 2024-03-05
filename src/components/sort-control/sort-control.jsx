@@ -13,8 +13,8 @@ const SortControl = ({ selectedControl, onSelect }) => {
 
   return (
     <div className='sort-control'>
-      <label className='sort-control__label'>Sort By</label>
-      <select data-testid='select' onChange={handleSortControlSelect} className='sort-control__select' value={selectedControl}>
+      <label htmlFor='select' className='sort-control__label'>Sort By</label>
+      <select id='select' data-testid='select' onChange={handleSortControlSelect} className='sort-control__select' value={selectedControl}>
         {options}
       </select>
     </div>

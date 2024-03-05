@@ -1,3 +1,4 @@
+import { movieTileMock } from '../__mocks__/movie-tile';
 import MovieTile from '../components/movie-tile/movie-tile';
 
 export default {
@@ -17,12 +18,7 @@ export default {
 
 export const Default = {
   args: {
-    movie: {
-      genres: ['Action', 'Adventure'],
-      release_date: 2004,
-      title: 'Pulp Fiction',
-      poster_path: ''
-    },
+    movie: movieTileMock,
     onClick: () => { }
   }
 };

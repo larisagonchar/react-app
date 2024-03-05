@@ -8,7 +8,8 @@ export default {
 
 export const Search = {
   args: {
-    search: ''
+    searchQuery: '',
+    onSearch: () => {}
   },
   play: async({ canvasElement }) => {
     const canvas = within(canvasElement);

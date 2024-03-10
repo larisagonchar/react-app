@@ -1,13 +1,16 @@
+@import '../../styles/colors.css';
+@import '../../styles/sizes.css';
+
 .genre-select {
   display: flex;
   text-transform: uppercase;
-  margin-top: 20px;
-  gap: 20px;
-  color: #ffffff;
+  margin-top: var(--indentation-size-large);
+  gap: var(--gap-size-large);
+  color: var(--white-color);
 }
 
 .genre-select__item:hover, .genre-select__item_selected {
   text-decoration: underline;
   cursor: pointer;
-  color: #F65261;
+  color: var(--primary-color);
 }

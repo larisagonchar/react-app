@@ -1,8 +1,8 @@
-import './App.css';
 import Counter from './components/counter/counter';
 import GenreSelect from './components/genre-select/genre-select';
 import SearchForm from './components/search-form/search-form';
 import { GENRES_LIST } from './constants/genre.constants';
+import './styles/reset.css';
 
 function App() {
   const genreList = GENRES_LIST;

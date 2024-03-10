@@ -1,0 +1,29 @@
+@import '../../styles/sizes.css';
+@import '../../styles/colors.css';
+
+.sort-control__option {
+  background-color: var(--dark-background-color);
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+
+.sort-control__label {
+  color: var(--white-color);
+  font-weight: 300;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.sort-control__select {
+  width: 7.8rem;
+  outline: none;
+  background-color: transparent;
+  color: var(--white-color);
+  text-transform: uppercase;
+  border: 0;
+}
+
+.sort-control {
+  display: flex;
+  gap: 1.25rem;
+}

@@ -3,18 +3,26 @@
 
 .search-form {
   width: 100%;
-  font-size: var(--font-size);
+  font-size: var(--font-size-medium);
   display: flex;
   justify-content: center;
-  gap: var(--gap-size);
+  gap: var(--gap-size-medium);
   height: 3.125rem;
 }
 
 .search-form__input {
   width: 60%;
-  font-size: var(--font-size);
+  font-size: var(--font-size-medium);
   background-color: var(--dark-background-color);
-  padding-left: var(--indentation-size);
+  padding-left: var(--indentation-size-medium);
   border-radius: var(--border-radius);
   color: var(--white-color);
+}
+
+.search-form__button {
+  width: 20%;
+  color: var(--white-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-medium);
+  background-color: var(--primary-color);
 }

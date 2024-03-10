@@ -1,0 +1,34 @@
+@import '../../styles/colors.css';
+@import '../../styles/sizes.css';
+
+.context-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-size-medium);
+  color: var(--white-color);
+  position: absolute;
+  padding: var(--indentation-size-small);
+  right: 0;
+  width: calc(var(--width) / 2);
+  font-size: var(--font-size-small);
+  background-color: var(--menu-background-color);
+}
+
+.context-menu__img {
+  align-self: flex-end;
+  width: 1rem;
+  cursor: pointer;
+}
+
+.context-menu__button {
+  width: 100%;
+  background-color: transparent;
+  text-transform: initial;
+  color: var(--white-color);
+  padding: var(--indentation-size-small);
+}
+
+.context-menu__button:hover {
+  background-color: var(--primary-color);
+}

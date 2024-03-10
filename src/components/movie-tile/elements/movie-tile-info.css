@@ -1,0 +1,17 @@
+.movie-tile__info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--indentation-size-medium);
+}
+
+.movie-tile__info-title {
+  color: var(--white-color);
+}
+
+.movie-tile__info-year {
+  color: var(--white-color);
+  border: var(--border-size) solid var(--white-color);
+  padding: var(--indentation-size-small);
+  border-radius: var(--border-radius);
+}

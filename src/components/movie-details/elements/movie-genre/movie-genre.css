@@ -1,0 +1,5 @@
+.movie-details__genre {
+  color: var(--white-color);
+  opacity: 0.6;
+  font-weight: var(--font-weight);
+}

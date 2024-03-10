@@ -1,8 +1,8 @@
 @import '../../styles/sizes.css';
 
 .counter {
-  margin: var(--indentation-size);
-  padding: var(--indentation-size);
+  margin: var(--indentation-size-medium);
+  padding: var(--indentation-size-medium);
   color: var(--white-color);
   border: var(--border-size) solid black;
   width: fit-content;
@@ -10,5 +10,5 @@
 
 .counter__buttons {
   display: flex;
-  gap: var(--gap-size);
+  gap: var(--gap-size-medium);
 }

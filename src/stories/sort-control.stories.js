@@ -1,4 +1,5 @@
-import SortControl from '../components/sort-control/sort-control';
+import SortControl from 'src/components/sort-control/sort-control';
+import { SORT_CONTROLS } from 'src/constants/sort-control.constants';
 
 export default {
   title: 'SortControl',
@@ -17,7 +18,7 @@ export default {
 
 export const Default = {
   args: {
-    selectedControl: 'Title',
+    selectedControl: SORT_CONTROLS[0],
     onSelect: () => {}
   }
 };

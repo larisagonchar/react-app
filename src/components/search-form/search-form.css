@@ -1,5 +1,5 @@
-@import '../../styles/sizes.css';
-@import '../../styles/colors.css';
+@import 'src/styles/sizes.css';
+@import 'src/styles/colors.css';
 
 .search-form {
   width: 100%;
@@ -17,12 +17,4 @@
   padding-left: var(--indentation-size-medium);
   border-radius: var(--border-radius);
   color: var(--white-color);
-}
-
-.search-form__button {
-  width: 20%;
-  color: var(--white-color);
-  border-radius: var(--border-radius);
-  font-size: var(--font-size-medium);
-  background-color: var(--primary-color);
 }

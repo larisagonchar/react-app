@@ -1,4 +1,4 @@
-@import '../../styles/sizes.css';
+@import 'src/styles/sizes.css';
 
 .counter {
   margin: var(--indentation-size-medium);

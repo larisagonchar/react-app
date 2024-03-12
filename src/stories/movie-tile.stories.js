@@ -1,5 +1,5 @@
 import { movieTileMock } from '../__mocks__/movie-tile';
-import MovieTile from '../components/movie-tile/movie-tile';
+import MovieTile from 'src/components/movie-tile/movie-tile';
 
 export default {
   title: 'MovieTile',

@@ -1,5 +1,5 @@
 import React from 'react';
-import searchImg from '../../../../../assets/search-button.png';
+import searchImg from 'src/assets/search-button.png';
 import './movie-header.css';
 
 const MovieHeader = () => {

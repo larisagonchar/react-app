@@ -1,13 +1,12 @@
 import React from 'react';
 import './movie-details.css';
-import { formatTime } from '../../formatters/time.formatter';
+import { formatTime } from 'src/formatters/time.formatter';
 import MovieHeader from './elements/movie-header/movie-header';
 import MovieGenre from './elements/movie-genre/movie-genre';
 import MovieImage from './elements/movie-image/movie-image';
 import Title from '../title/title';
 
 const MovieDetails = ({ selectedMovie }) => {
-
   return (
     <section className='movie-details'>
       <MovieHeader/>
@@ -24,7 +23,7 @@ const MovieDetails = ({ selectedMovie }) => {
           <MovieGenre genres={selectedMovie.genres}/>
 
           <div className='movie-details__container'>
-            <span className='movie-details__year'>{selectedMovie.release_date}</span>
+            <span className='movie-details__year'>{new Date(selectedMovie.release_date).getFullYear()}</span>
             <span className='movie-details__time'>{formatTime(selectedMovie.runtime)}</span>
           </div>
 

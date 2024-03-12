@@ -1,22 +1,24 @@
 import React from 'react';
 import './sort-control.css';
-import { SORT_CONTROLS } from '../../constants/sort-control.constants';
+import { SORT_CONTROLS } from 'src/constants/sort-control.constants';
+import Label from '../controls/label/label';
+import SelectInput from '../controls/select/select';
 
 const SortControl = ({ selectedControl, onSelect }) => {
   const handleSortControlSelect = (e) => {
-    onSelect(e.target.value);
+    onSelect(e.value);
   };
-
-  const options = SORT_CONTROLS.map(control => {
-    return <option value={control.value} key={control.id} className='sort-control__option'>{control.value}</option>;
-  })
 
   return (
     <div className='sort-control'>
-      <label htmlFor='select' className='sort-control__label'>Sort By</label>
-      <select id='select' data-testid='select' onChange={handleSortControlSelect} className='sort-control__select' value={selectedControl}>
-        {options}
-      </select>
+      <Label control={'select'} label={'Sort By'} />
+      <SelectInput
+        onSelect={handleSortControlSelect}
+        options={SORT_CONTROLS}
+        props={{
+          value: selectedControl
+        }}
+      />
     </div>
   );
 };

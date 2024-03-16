@@ -7,8 +7,8 @@ const ContextMenu = ({ onClick }) => {
   return (
     <div className='context-menu'>
       <ButtonClose onClick={onClick}/>
-      <Button type={'button'} title={'Edit'} className={'context-menu__button'} />
-      <Button type={'button'} title={'Delete'} className={'context-menu__button'} />
+      <Button type='button' title='Edit' className='context-menu__button' />
+      <Button type='button' title='Delete' className='context-menu__button' />
     </div>
   );
 };

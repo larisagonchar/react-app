@@ -1,7 +1,9 @@
 import React from 'react';
 import Select from 'react-select';
+import Label from '../label/label';
+import { Controller } from 'react-hook-form';
 
-const SelectInput = ({ options, placeholder, isMulti = false, closeMenuOnSelect = true, onSelect, props }) => {
+const SelectInput = ({ options, id, label, control, placeholder, inputClass, isMulti = false, closeMenuOnSelect = true, onSelect, props }) => {
   const styles = {
     control: (baseStyles) => ({
       ...baseStyles,
@@ -21,15 +23,22 @@ const SelectInput = ({ options, placeholder, isMulti = false, closeMenuOnSelect 
   };
 
   return (
-    <Select
-      onChange={onSelect}
-      {...props}
-      options={options}
-      isMulti={isMulti}
-      closeMenuOnSelect={closeMenuOnSelect}
-      placeholder={placeholder}
-      styles={styles}
-    />
+    <div className={inputClass}>
+      <Label inputId={id} label={label} />
+      <Controller control={control} name='genres'
+        render={({ field }) => (
+          <Select
+            onChange={onSelect}
+            {...field}
+            options={options}
+            isMulti={isMulti}
+            closeMenuOnSelect={closeMenuOnSelect}
+            placeholder={placeholder}
+            styles={styles}
+          />
+        )}
+      />
+    </div>
   );
 };
 

@@ -11,7 +11,7 @@ const SortControl = ({ selectedControl, onSelect }) => {
 
   return (
     <div className='sort-control'>
-      <Label control={'select'} label={'Sort By'} />
+      <Label inputId='select' label='Sort By' />
       <SelectInput
         onSelect={handleSortControlSelect}
         options={SORT_CONTROLS}

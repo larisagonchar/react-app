@@ -1,5 +1,5 @@
-@import '../../styles/colors.css';
-@import '../../styles/sizes.css';
+@import 'src/styles/colors.css';
+@import 'src/styles/sizes.css';
 
 .movie-tile {
   display: flex;

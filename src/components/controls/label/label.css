@@ -1,0 +1,7 @@
+@import 'src/styles/colors.css';
+
+.label {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}

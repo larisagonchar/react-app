@@ -1,6 +1,6 @@
 import React from 'react';
 import './search-form.css';
-import Button from '../button/button';
+import Button from '../controls/button/button';
 
 const SearchForm = ({ searchQuery, onSearch }) => {
   let search = searchQuery;
@@ -19,7 +19,7 @@ const SearchForm = ({ searchQuery, onSearch }) => {
       <input name='search' aria-label='search' onChange={handleInputChange}
         className='search-form__input' type='text' placeholder='What do you want to watch?'
         defaultValue={search}></input>
-      <Button type={'submit'} title={'submit'} className={'search-form__button'}/>
+      <Button type={'submit'} title={'submit'}/>
     </form>
   );
 }

@@ -1,0 +1,6 @@
+@import 'src/styles/colors.css';
+
+.error-label {
+  color: var(--error-color);
+  font-style: italic;
+}

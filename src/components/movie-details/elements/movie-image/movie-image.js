@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './movie-image.css';
-import defaultImg from '../../../../../assets/no-image.png';
+import defaultImg from 'src/assets/no-image.png';
 
 const MovieImage = ({ image }) => {
   const [imageSrc, setImageSrc] = useState(image);

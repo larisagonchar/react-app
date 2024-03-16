@@ -1,0 +1,45 @@
+@import 'src/styles/colors.css';
+@import 'src/styles/sizes.css';
+
+.movie-form__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: var(--indentation-size-large);
+  gap: var(--gap-size-medium);
+}
+
+.movie-form__control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-size-small);
+}
+
+.movie-form__control-container {
+  display: flex;
+  gap: var(--gap-size-large);
+}
+
+.movie-form__control:first-child {
+  flex: 2;
+}
+
+.movie-form__control:nth-child(2) {
+  flex: 1;
+}
+
+.movie-form__buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-size-medium);
+  margin-top: var(--indentation-size-large);
+}
+
+.movie-form__button_reset {
+  background-color: transparent;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  border: var(--border-size) solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: var(--indentation-size-medium) var(--indentation-size-extra-large);
+}

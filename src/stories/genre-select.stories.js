@@ -1,6 +1,6 @@
 import { expect, userEvent, within } from '@storybook/test';
-import GenreSelect from '../components/genre-select/genre-select';
-import { GENRES_LIST } from '../constants/genre.constants';
+import GenreSelect from 'src/components/genre-select/genre-select';
+import { GENRES_LIST } from 'src/constants/genre.constants';
 
 export default {
   title: 'GenreSelect',

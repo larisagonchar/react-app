@@ -1,5 +1,5 @@
-@import '../../styles/colors.css';
-@import '../../styles/sizes.css';
+@import 'src/styles/colors.css';
+@import 'src/styles/sizes.css';
 
 .context-menu {
   display: flex;
@@ -13,12 +13,6 @@
   width: calc(var(--width) / 2);
   font-size: var(--font-size-small);
   background-color: var(--menu-background-color);
-}
-
-.context-menu__img {
-  align-self: flex-end;
-  width: 1rem;
-  cursor: pointer;
 }
 
 .context-menu__button {

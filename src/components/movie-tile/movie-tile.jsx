@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './movie-tile.css';
-import ContextMenu from '../context-menu/context-menu';
-import MovieGenre from '../movie-details/elements/movie-genre/movie-genre';
-import MovieImage from '../movie-details/elements/movie-image/movie-image';
+import ContextMenu from 'src/components/context-menu/context-menu';
+import MovieGenre from 'src/components/movie-details/elements/movie-genre/movie-genre';
+import MovieImage from 'src/components/movie-details/elements/movie-image/movie-image';
 import MovieTileInfo from './elements/movie-tile-info';
 
 const MovieTile = ({ movie, onClick }) => {

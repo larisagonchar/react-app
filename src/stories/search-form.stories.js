@@ -1,5 +1,5 @@
 import { expect, userEvent, within } from '@storybook/test';
-import SearchForm from '../components/search-form/search-form';
+import SearchForm from 'src/components/search-form/search-form';
 
 export default {
   title: 'SearchForm',

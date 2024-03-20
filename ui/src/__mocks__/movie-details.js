@@ -1,7 +1,7 @@
 import { GENRES_LIST } from '../constants/genre.constants';
 
 export const movieDetailsMock = {
-  genres: [GENRES_LIST[1].item, GENRES_LIST[2].item],
+  genres: [GENRES_LIST[1].value, GENRES_LIST[2].value],
   release_date: '2016-12-29',
   title: 'Pulp Fiction',
   vote_average: 9.8,

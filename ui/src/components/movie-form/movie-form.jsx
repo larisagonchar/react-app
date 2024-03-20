@@ -6,18 +6,18 @@ import Button from '../controls/button/button';
 import Input from '../controls/input/input';
 import SelectInput from '../controls/select/select';
 import TextArea from '../controls/textarea/textarea';
-import { mapListToSelectInput } from 'src/mappers/select.mapper';
+import { mapObjectToSelectInput, mapStringsToSelectInput } from 'src/mappers/select.mapper';
 import { mapFormDataToSubmitRequest, mapMovieToFormData } from 'src/mappers/movie-form.mapper';
 
 const MovieForm = ({ onSubmit, movie }) => {
   const genresList = JSON.parse(JSON.stringify(GENRES_LIST));
   genresList.shift();
 
-  const genresListValues = genresList.map(genre => genre.item);
-  const genresOptions = mapListToSelectInput(genresListValues);
+  const genresOptions = mapObjectToSelectInput(genresList);
+  const selectedGenresOptions = mapStringsToSelectInput(movie?.genres);
 
   const { register, handleSubmit, formState: { errors }, control } = useForm({
-    defaultValues: mapMovieToFormData(movie)
+    defaultValues: mapMovieToFormData(movie, selectedGenresOptions)
   });
 
   const handleSubmitPress = (data) => {
@@ -39,7 +39,7 @@ const MovieForm = ({ onSubmit, movie }) => {
         <Input id='poster_path' type='text' placeholder='https://' label='Movie url'
           register={register} errorMessage={errors.poster_path?.message}
           inputClass='movie-form__control' />
-        <Input id='rating' type='text' placeholder='7.8' inputClass='movie-form__control'
+        <Input id='vote_average' type='text' placeholder='7.8' inputClass='movie-form__control'
           register={register} label='Rating' errorMessage={errors.rating?.message} />
       </div>
 

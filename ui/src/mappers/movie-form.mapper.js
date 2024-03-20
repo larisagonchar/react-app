@@ -1,6 +1,4 @@
-import { mapListToSelectInput } from "./select.mapper";
-
-export const mapMovieToFormData = (movie) => {
+export const mapMovieToFormData = (movie, genres) => {
   return {
     title: movie ? movie.title : '',
     release_date: movie ? movie.release_date : '',
@@ -8,7 +6,7 @@ export const mapMovieToFormData = (movie) => {
     vote_average: movie ? movie.vote_average : '',
     runtime: movie ? movie.runtime : '',
     overview: movie ? movie.overview : '',
-    genres: mapListToSelectInput(movie?.genres)
+    genres
   }
 };
 

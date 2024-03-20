@@ -6,7 +6,7 @@ import ErrorLabel from '../error-label/error-label';
 const Input = ({ id, placeholder, type, label, errorMessage, register, inputClass }) => {
   return (
     <div className={inputClass}>
-      <Label inputId={id} label={label} />
+      {label && <Label inputId={id} label={label} /> }
       <input
         id={id}
         className='input'
@@ -14,7 +14,7 @@ const Input = ({ id, placeholder, type, label, errorMessage, register, inputClas
         type={type}
         {...register(id, { required: 'This field is required' })}
       />
-      <ErrorLabel errorMessage={errorMessage} />
+      { errorMessage && <ErrorLabel errorMessage={errorMessage} /> }
     </div>
   );
 };

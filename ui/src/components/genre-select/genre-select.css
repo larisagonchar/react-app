@@ -1,0 +1,15 @@
+@import 'src/styles/colors.css';
+@import 'src/styles/sizes.css';
+
+.genre-select {
+  display: flex;
+  text-transform: uppercase;
+  gap: var(--gap-size-large);
+  color: var(--white-color);
+}
+
+.genre-select__item:hover, .genre-select__item_selected {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--primary-color);
+}

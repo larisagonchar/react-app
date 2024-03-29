@@ -1,0 +1,11 @@
+@import 'src/styles/colors.css';
+@import 'src/styles/sizes.css';
+
+.movie-delete__content {
+  margin-top: var(--indentation-size-large);
+  color: var(--white-color);
+}
+
+.movie-delete__button {
+  align-self: flex-end;
+}

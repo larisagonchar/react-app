@@ -1,7 +1,0 @@
-@import 'src/styles/sizes.css';
-
-.sort-control {
-  display: flex;
-  align-items: center;
-  gap: var(--gap-size-medium);
-}

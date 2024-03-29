@@ -1,0 +1,20 @@
+@import 'src/styles/sizes.css';
+@import 'src/styles/colors.css';
+
+.search-form {
+  width: 100%;
+  font-size: var(--font-size-medium);
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-size-medium);
+  height: 3.125rem;
+}
+
+.search-form__input {
+  width: 60%;
+  font-size: var(--font-size-medium);
+  background-color: var(--dark-background-color);
+  padding-left: var(--indentation-size-medium);
+  border-radius: var(--border-radius);
+  color: var(--white-color);
+}

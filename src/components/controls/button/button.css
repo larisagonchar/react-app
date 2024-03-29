@@ -1,0 +1,10 @@
+@import 'src/styles/sizes.css';
+@import 'src/styles/colors.css';
+
+.button {
+  color: var(--white-color);
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: var(--indentation-size-medium) var(--indentation-size-extra-large);
+}

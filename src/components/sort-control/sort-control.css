@@ -1,0 +1,23 @@
+@import 'src/styles/sizes.css';
+@import 'src/styles/colors.css';
+
+.sort-control__option {
+  background-color: var(--dark-background-color);
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+
+.sort-control__select {
+  width: 7.8rem;
+  outline: none;
+  background-color: transparent;
+  color: var(--white-color);
+  text-transform: uppercase;
+  border: 0;
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}

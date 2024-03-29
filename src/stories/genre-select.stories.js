@@ -27,12 +27,12 @@ export const Default = {
 export const SelectGenre = {
   args: {
     ...Default.args,
-    selectedGenre: GENRES_LIST[2].value
+    selectedGenre: GENRES_LIST[2].item
   },
   play: async({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const selectedItem = canvas.getByText(GENRES_LIST[2].value);
-    const newSelectedItem = canvas.getByText(GENRES_LIST[3].value);
+    const selectedItem = canvas.getByText(GENRES_LIST[2].item);
+    const newSelectedItem = canvas.getByText(GENRES_LIST[3].item);
     
     await expect(selectedItem).toHaveClass('genre-select__item_selected');
 

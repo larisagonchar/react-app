@@ -1,8 +1,12 @@
 @import 'src/styles/colors.css';
 @import 'src/styles/sizes.css';
 
-.movie-delete__content {
+.movie-delete {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
   margin-top: var(--indentation-size-large);
+  background-color: var(--menu-background-color);
   color: var(--white-color);
 }
 

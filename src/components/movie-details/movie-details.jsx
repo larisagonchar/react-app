@@ -1,15 +1,15 @@
 import React from 'react';
 import './movie-details.css';
 import { formatTime } from 'src/formatters/time.formatter';
+import MovieHeader from './elements/movie-header/movie-header';
 import MovieGenre from './elements/movie-genre/movie-genre';
 import MovieImage from './elements/movie-image/movie-image';
 import Title from '../title/title';
-import Header from '../header/header';
 
-const MovieDetails = ({ selectedMovie, onSearch }) => {
+const MovieDetails = ({ selectedMovie }) => {
   return (
     <section className='movie-details'>
-      <Header isSearch={true} onSearch={onSearch}/>
+      <MovieHeader/>
 
       <div className='movie-details__main'>
         <MovieImage image={selectedMovie.poster_path}/>

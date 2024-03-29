@@ -1,10 +1,10 @@
 import React from 'react';
 import './label.css';
 
-const Label = ({ inputId, label }) => {
+const Label = ({ control, label }) => {
   return (
     <label
-      htmlFor={inputId}
+      htmlFor={control}
       className='label'>{label}</label>
   );
 };

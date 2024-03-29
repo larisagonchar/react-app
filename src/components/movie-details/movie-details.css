@@ -4,7 +4,8 @@
 .movie-details {
   display: flex;
   flex-direction: column;
-  padding: 0 var(--indentation-size-large) var(--indentation-size-large);
+  padding: var(--indentation-size-large);
+  gap: var(--gap-size-large);
   background-color: var(--menu-background-color);
 }
 

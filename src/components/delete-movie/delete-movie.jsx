@@ -4,12 +4,12 @@ import Button from 'src/components/controls/button/button';
 
 const DeleteMovie = () => {
   return (
-    <div className='movie-delete'>
-      <span>Are you sure you want to delete this movie?</span>
+    <>
+      <span className='movie-delete__content'>Are you sure you want to delete this movie?</span>
       <div className='movie-delete__button'>
-        <Button type={'button'} title={'Confirm'} />
+        <Button type='button' title='Confirm' />
       </div>
-    </div>
+    </>
   );
 };
 

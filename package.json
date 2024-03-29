@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.8",
     "classnames": "^2.5.1",
     "focus-trap-react": "^10.2.3",
     "react": "^18.2.0",
@@ -29,7 +30,8 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "plugin:storybook/recommended"
+      "plugin:storybook/recommended",
+      "plugin:react-hooks/recommended"
     ]
   },
   "browserslist": {
@@ -55,6 +57,7 @@
     "@storybook/react-webpack5": "^7.6.17",
     "@storybook/test": "^7.6.17",
     "cypress": "^13.6.6",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.8.0",
     "prop-types": "^15.8.1",
     "storybook": "^7.6.17",

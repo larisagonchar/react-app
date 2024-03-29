@@ -14,7 +14,6 @@
   width: 60%;
   font-size: var(--font-size-medium);
   background-color: var(--dark-background-color);
-  padding-left: var(--indentation-size-medium);
   border-radius: var(--border-radius);
   color: var(--white-color);
 }

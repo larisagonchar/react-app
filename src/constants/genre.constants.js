@@ -1,34 +1,36 @@
+export const GENRE_ALL = 'All';
+
 export const GENRES_LIST = [
   {
-    id: 1,
-    item: 'All'
+    id: GENRE_ALL,
+    value: GENRE_ALL
   },
   {
-    id: 2,
-    item: 'Action'
+    id: 'Action',
+    value: 'Action'
   },
   {
-    id: 3,
-    item: 'Adventure'
+    id: 'Adventure',
+    value: 'Adventure'
   },
   {
-    id: 4,
-    item: 'Comedy'
+    id: 'Comedy',
+    value: 'Comedy'
   },
   {
-    id: 5,
-    item: 'Crime'
+    id: 'Crime',
+    value: 'Crime'
   },
   {
-    id: 6,
-    item: 'Drama'
+    id: 'Drama',
+    value: 'Drama'
   },
   {
-    id: 7,
-    item: 'Family'
+    id: 'Family',
+    value: 'Family'
   },
   {
-    id: 8,
-    item: 'Thriller'
+    id: 'Thriller',
+    value: 'Thriller'
   }
 ];

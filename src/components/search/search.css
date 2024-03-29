@@ -1,0 +1,15 @@
+.search {
+  background-color: var(--black-color);
+  background-image: url('src/assets/background.png');
+  height: var(--height);
+  width: 100%;
+}
+
+.search__title {
+  text-transform: uppercase;
+  font-size: var(--font-size-large);
+  color: var(--white-color);
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: var(--indentation-size-medium);
+}

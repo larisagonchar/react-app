@@ -4,7 +4,7 @@ import MovieForm from 'src/components/movie-form/movie-form';
 
 const AddMovie = () => {
   return (
-    <Dialog title={'Add Movie'}>
+    <Dialog title={'Add Movie'} onClose={() => {}}>
       <MovieForm/>
     </Dialog>
   );

@@ -4,7 +4,7 @@ import './button-close.css';
 
 const ButtonClose = ({ onClose }) => {
   return (
-    <button className='button-close' type='button'>
+    <button className='button-close' type='button' aria-label='Close'>
       <img src={closeImg} alt='close' onClick={onClose} />
     </button>
   );

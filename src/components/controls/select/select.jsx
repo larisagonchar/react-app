@@ -1,13 +1,19 @@
 import React from 'react';
 import Select from 'react-select';
+import Label from '../label/label';
+import { Controller } from 'react-hook-form';
 
-const SelectInput = ({ options, placeholder, isMulti = false, closeMenuOnSelect = true, onSelect, props }) => {
+const SelectInput = ({ options, id, label, control, placeholder, inputClass, isMulti = false, closeMenuOnSelect = true }) => {
   const styles = {
     control: (baseStyles) => ({
       ...baseStyles,
       backgroundColor: 'var(--dark-background-color)',
       border: 'none',
       height: '3rem'
+    }),
+    singleValue: (baseStyles) => ({
+      ...baseStyles,
+      color: 'var(--white-color)'
     }),
     menu: (baseStyles) => ({
       ...baseStyles,
@@ -16,20 +22,27 @@ const SelectInput = ({ options, placeholder, isMulti = false, closeMenuOnSelect 
     }),
     option: (baseStyles, state) => ({
       ...baseStyles,
+      color: state.isFocused ? 'var(--dark-background-color)' : 'var(--primary-color)',
       backgroundColor: state.isFocused ? 'var(--primary-color)' : 'var(--dark-background-color)'
     })
   };
 
   return (
-    <Select
-      onChange={onSelect}
-      {...props}
-      options={options}
-      isMulti={isMulti}
-      closeMenuOnSelect={closeMenuOnSelect}
-      placeholder={placeholder}
-      styles={styles}
-    />
+    <div className={inputClass}>
+      <Label inputId={id} label={label} />
+      <Controller control={control} name={id}
+        render={({ field }) => (
+          <Select
+            {...field}
+            options={options}
+            isMulti={isMulti}
+            closeMenuOnSelect={closeMenuOnSelect}
+            placeholder={placeholder}
+            styles={styles}
+          />
+        )}
+      />
+    </div>
   );
 };
 

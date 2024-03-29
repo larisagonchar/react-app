@@ -1,7 +1,7 @@
 /* eslint-disable testing-library/no-render-in-setup */
 /* eslint-disable testing-library/no-wait-for-side-effects */
 import { render, screen, waitFor } from '@testing-library/react';
-import Counter from '../components/counter/counter';
+import Counter from 'components/counter/counter';
 import userEvent from '@testing-library/user-event';
 
 describe('Counter component', () => {

@@ -29,9 +29,10 @@ const MovieTile = ({ movie, onClick }) => {
 
       {isContextMenuOpen && <ContextMenu onClick={handleContextMenuClick} />}
 
-      <MovieTileInfo title={movie.title} releaseDate={movie.release_date} />
-      
-      <MovieGenre genres={movie.genres} />
+      <div className='movie-tile__info'>
+        <MovieTileInfo title={movie.title} releaseDate={movie.release_date} />
+        <MovieGenre genres={movie.genres} />
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import Header from '../header/header';
 const Search = ({ onSearch, searchQuery }) => {
   return (
     <section className='search'>
-      <Header isSearch={false} />
+      <Header isSearchButtonVisible={false} />
       <h3 className='search__title'>find your movie</h3>
       <SearchForm searchQuery={searchQuery} onSearch={onSearch}/>
     </section>

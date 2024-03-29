@@ -1,0 +1,9 @@
+.page-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--indentation-size-large) 0;
+  padding: 0 var(--indentation-size-large);
+  flex-wrap: wrap;
+  gap: var(--gap-size-medium);
+}

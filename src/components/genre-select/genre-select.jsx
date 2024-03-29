@@ -6,7 +6,7 @@ import { getSelectedGenresHelper } from 'src/helpers/genre-select.helper';
 const GenreSelect = ({ genres, selectedGenres, onSelect }) => {
   const handleSelectGenre = (event) => {
     const selectedGenre = event.target.textContent;
-    onSelect(getSelectedGenresHelper(selectedGenre, [...selectedGenres]));
+    onSelect(getSelectedGenresHelper(selectedGenre, selectedGenres));
   };
 
   const genreList = genres.map(item => {

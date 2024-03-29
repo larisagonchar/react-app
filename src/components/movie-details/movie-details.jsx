@@ -9,7 +9,7 @@ import Header from '../header/header';
 const MovieDetails = ({ selectedMovie, onSearch }) => {
   return (
     <section className='movie-details'>
-      <Header isSearch={true} onSearch={onSearch}/>
+      <Header isSearchButtonVisible={true} onSearch={onSearch}/>
 
       <div className='movie-details__main'>
         <MovieImage image={selectedMovie.poster_path}/>

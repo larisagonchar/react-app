@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './movie-list-page.css';
 import Search from '../search/search';
-import SortControl from '../sort-control/sort-control';
-import GenreSelect from '../genre-select/genre-select';
-import { GENRES_LIST, GENRE_ALL } from 'src/constants/genre.constants';
+import { GENRE_ALL } from 'src/constants/genre.constants';
 import MovieTile from '../movie-tile/movie-tile';
 import { SORT_CONTROLS } from 'src/constants/sort-control.constants';
 import MovieDetails from '../movie-details/movie-details';
 import MovieService from 'src/services/movie.service';
+import PageControls from './elements/page-controls';
 
 const MovieListPage = () => {
   const [searchQuery, setSearchQuery] = useState(null);
@@ -23,6 +22,7 @@ const MovieListPage = () => {
       search: searchQuery,
       searchBy: 'title',
       sortBy: sortControl.id,
+      sortOrder: 'asc',
       filter: genres.includes(GENRE_ALL) ? null : genres.join(',')
     };
 
@@ -46,16 +46,16 @@ const MovieListPage = () => {
     <MovieTile movie={movie} key={movie.id} onClick={setMovie} />
   );
 
+  const search = <Search onSearch={setSearchQuery} searchQuery={searchQuery} />;
+  const movieDetails = <MovieDetails selectedMovie={movie} onSearch={() => { setMovie(null) }} />;
+
   return (
     <>
-      {!movie && <Search onSearch={setSearchQuery} searchQuery={searchQuery} />}
-      {movie && <MovieDetails selectedMovie={movie} onSearch={() => { setMovie(null) }} />}
+      {movie ? movieDetails : search}
 
       <main>
-        <div className='movie-list-page__controls'>
-          <GenreSelect genres={GENRES_LIST} selectedGenres={genres} onSelect={setGenres} />
-          <SortControl selectedControl={sortControl} onSelect={setSortControl} />
-        </div>
+        <PageControls selectedGenres={genres} onSelectGenres={setGenres} 
+          selectedControl={sortControl} onSelectSortControl={setSortControl}/>
 
         <div className='movie-list-page__content'>
           {movieList}

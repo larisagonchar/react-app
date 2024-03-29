@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import MovieTile from '../components/movie-tile/movie-tile';
+import MovieTile from 'components/movie-tile/movie-tile';
 import userEvent from '@testing-library/user-event';
 import { movieTileMock } from '../__mocks__/movie-tile';
 

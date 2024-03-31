@@ -1,61 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './movie-list-page.css';
-import Search from '../search/search';
 import { GENRE_ALL } from 'src/constants/genre.constants';
 import MovieTile from '../movie-tile/movie-tile';
-import { SORT_CONTROLS } from 'src/constants/sort-control.constants';
-import MovieDetails from '../movie-details/movie-details';
 import MovieService from 'src/services/movie.service';
 import PageControls from './elements/page-controls';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useAppSearchParams } from 'src/hooks/app-search-params';
 
 const MovieListPage = () => {
-  const [searchQuery, setSearchQuery] = useState(null);
-  const [sortControl, setSortControl] = useState(SORT_CONTROLS[0]);
-  const [genres, setGenres] = useState([GENRE_ALL]);
-  const [movie, setMovie] = useState(null);
   const [movies, setMovies] = useState([]);
+  const [state, searchParams, setGenres, setSearchQuery, setSortControl, setController] = useAppSearchParams();
+  const navigate = useNavigate();
 
-  const [controller, setController] = useState(null);
+  const handleMovieTileClick = (id) => {
+    navigate(`${id}?${searchParams}`);
+  };
 
-  useEffect(() => {
-    const params = {
-      search: searchQuery,
-      searchBy: 'title',
-      sortBy: sortControl.id,
-      sortOrder: 'asc',
-      filter: genres.includes(GENRE_ALL) ? null : genres.join(',')
-    };
-
-    setMoviesList(params);
-  }, [genres, searchQuery, sortControl]);
-
-  const setMoviesList = async (params) => {
-    if (controller) {
-      controller.abort();
-      setController(null);
-    }
-
+  const setMoviesList = useCallback(async (params) => {
     const newController = new AbortController();
     setController(newController);
 
     const result = await MovieService.getMovies(params, newController.signal);
     setMovies(result);
-  };
+  }, [setController]);
+
+  useEffect(() => {
+    const requestParams = {
+      search: state.searchQuery,
+      sortBy: state.sortControl,
+      filter: state.genres.includes(GENRE_ALL) ? null : state.genres
+    };
+
+    setMoviesList(requestParams);
+  }, [state, setMoviesList]);
 
   const movieList = movies.map(movie =>
-    <MovieTile movie={movie} key={movie.id} onClick={setMovie} />
+    <MovieTile movie={movie} key={movie.id} onClick={handleMovieTileClick} />
   );
-
-  const search = <Search onSearch={setSearchQuery} searchQuery={searchQuery} />;
-  const movieDetails = <MovieDetails selectedMovie={movie} onSearch={() => { setMovie(null) }} />;
 
   return (
     <>
-      {movie ? movieDetails : search}
+      <Outlet context={[state.searchQuery, setSearchQuery]} />
 
       <main>
-        <PageControls selectedGenres={genres} onSelectGenres={setGenres} 
-          selectedControl={sortControl} onSelectSortControl={setSortControl}/>
+        <PageControls selectedGenres={state.genres} onSelectGenres={setGenres}
+          selectedControlId={state.sortControl} onSelectSortControl={setSortControl} />
 
         <div className='movie-list-page__content'>
           {movieList}

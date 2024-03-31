@@ -1,9 +1,10 @@
-import MovieListPage from './components/movie-list-page/movie-list-page';
+import { RouterProvider } from 'react-router-dom';
 import './styles/reset.css';
+import { router } from './App.router';
 
 function App() {
   return (
-    <MovieListPage />
+    <RouterProvider router={router} />
   );
 }
 

@@ -5,11 +5,20 @@ import MovieGenre from './elements/movie-genre/movie-genre';
 import MovieImage from './elements/movie-image/movie-image';
 import Title from '../title/title';
 import Header from '../header/header';
+import { useLoaderData, useNavigate, useSearchParams } from 'react-router-dom';
 
-const MovieDetails = ({ selectedMovie, onSearch }) => {
+const MovieDetails = () => {
+  const selectedMovie = useLoaderData();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+  const handleSearchClick = () => {
+    navigate(`/?${searchParams}`)
+  };
+
   return (
     <section className='movie-details'>
-      <Header isSearchButtonVisible={true} onSearch={onSearch}/>
+      <Header isSearchButtonVisible={true} onSearch={handleSearchClick}/>
 
       <div className='movie-details__main'>
         <MovieImage image={selectedMovie.poster_path}/>

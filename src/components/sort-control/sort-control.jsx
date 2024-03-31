@@ -5,8 +5,9 @@ import SelectInput from '../controls/select/select';
 import { useForm } from 'react-hook-form';
 import { mapObjectToSelectInput } from 'src/mappers/select.mapper';
 
-const SortControl = ({ selectedControl, onSelect }) => {
+const SortControl = ({ selectedControlId, onSelect }) => {
   const selectOptions = mapObjectToSelectInput(SORT_CONTROLS);
+  const selectedControl = SORT_CONTROLS.find(control => control.id === selectedControlId);
 
   const { control, watch } = useForm({
     defaultValues: {
@@ -17,7 +18,7 @@ const SortControl = ({ selectedControl, onSelect }) => {
   useEffect(() => {
     const subscription = watch((value) => {
       if (value.sortControl.id !== selectedControl.id) {
-        onSelect(value.sortControl)
+        onSelect(value.sortControl.id)
       }
     });
     return () => subscription.unsubscribe();

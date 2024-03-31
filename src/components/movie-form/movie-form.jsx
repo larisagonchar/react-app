@@ -27,31 +27,23 @@ const MovieForm = ({ onSubmit, movie }) => {
 
   return (
     <form className='movie-form__form' onSubmit={handleSubmit((data) => handleSubmitPress(data))}>
-      <div className='movie-form__control-container'>
+      <div className='movie-form__controls'>
         <Input id='title' type='text' register={register}
-          label='Title' errorMessage={errors.title?.message} inputClass='movie-form__control' />
+          label='Title' errorMessage={errors.title?.message} />
         <Input id='release_date' type='date' register={register}
-          placeholder='Select Date' label='Release Date' inputClass='movie-form__control'
+          placeholder='Select Date' label='Release Date'
           errorMessage={errors.release_date?.message} />
-      </div>
 
-      <div className='movie-form__control-container'>
         <Input id='poster_path' type='text' placeholder='https://' label='Movie url'
-          register={register} errorMessage={errors.poster_path?.message}
-          inputClass='movie-form__control' />
-        <Input id='vote_average' type='text' placeholder='7.8' inputClass='movie-form__control'
+          register={register} errorMessage={errors.poster_path?.message} />
+        <Input id='vote_average' type='text' placeholder='7.8'
           register={register} label='Rating' errorMessage={errors.rating?.message} />
-      </div>
 
-      <div className='movie-form__control-container'>
         <SelectInput options={genresOptions} placeholder='Select Genre' control={control}
-          closeMenuOnSelect={false} isMulti={true} id='genres' label='Genre'
-          inputClass='movie-form__control'/>
-        <Input id='runtime' type='text' placeholder='minutes' inputClass='movie-form__control'
+          closeMenuOnSelect={false} isMulti={true} id='genres' label='Genre' />
+        <Input id='runtime' type='text' placeholder='minutes'
           register={register} label='Runtime' errorMessage={errors.runtime?.message} />
-      </div>
 
-      <div className='movie-form__control-container'>
         <TextArea id='overview' placeholder='Movie description' inputClass='movie-form__control'
           register={register} label='Overview' errorMessage={errors.overview?.message} />
       </div>

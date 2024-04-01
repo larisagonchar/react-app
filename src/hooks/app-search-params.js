@@ -20,24 +20,24 @@ export const useAppSearchParams = () => {
   const setGenres = (genres) => {
     abortController();
     dispatch({
-      query: CommonConstants.QUERY.FILTER,
-      value: genres
+      type: CommonConstants.QUERY.FILTER,
+      payload: genres
     });
   };
 
   const setSearchQuery = (searchQuery) => {
     abortController();
     dispatch({
-      query: CommonConstants.QUERY.SEARCH,
-      value: searchQuery
+      type: CommonConstants.QUERY.SEARCH,
+      payload: searchQuery
     });
   };
 
   const setSortControl = (sortControl) => {
     abortController();
     dispatch({
-      query: CommonConstants.QUERY.SORT_BY,
-      value: sortControl
+      type: CommonConstants.QUERY.SORT_BY,
+      payload: sortControl
     });
   };
 

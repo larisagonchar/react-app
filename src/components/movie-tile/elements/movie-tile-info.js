@@ -5,7 +5,7 @@ const MovieTileInfo = ({ title, releaseDate }) => {
   return (
     <div className='movie-tile__info-container'>
       <span className='movie-tile__info-title'>{title}</span>
-      <span className='movie-tile__info-year'>{new Date(releaseDate).getFullYear()}</span>
+      <span className='movie-tile__info-year'>{releaseDate}</span>
     </div>
   );
 };

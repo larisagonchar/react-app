@@ -5,10 +5,19 @@
   display: flex;
   text-transform: uppercase;
   gap: var(--gap-size-large);
+}
+
+.genre-select__button {
+  background: transparent;
+  padding: 0;
   color: var(--white-color);
 }
 
-.genre-select__item:hover, .genre-select__item_selected {
+.genre-select__button:focus {
+  outline: auto;
+}
+
+.genre-select__button:hover, .genre-select__button_selected {
   text-decoration: underline;
   cursor: pointer;
   color: var(--primary-color);

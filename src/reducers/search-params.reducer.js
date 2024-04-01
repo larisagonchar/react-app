@@ -3,25 +3,25 @@ import { GENRE_ALL } from "src/constants/genre.constants";
 import { SORT_CONTROLS } from "src/constants/sort-control.constants";
 
 export const searchParamsReducer = (state, action) => {
-  switch (action.query) {
+  switch (action.type) {
     case CommonConstants.QUERY.FILTER:
       return {
         ...state,
-        genres: action.value
+        genres: action.payload
       }
     case CommonConstants.QUERY.SORT_BY: {
       return {
         ...state,
-        sortControl: action.value
+        sortControl: action.payload
       }
     }
     case CommonConstants.QUERY.SEARCH: {
       return {
         ...state,
-        searchQuery: action.value
+        searchQuery: action.payload
       }
     }
-    default: throw Error('Unknown query: ' + action.query);
+    default: return state;
   }
 };
 

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { CommonConstants } from "src/constants/common.constants";
+import { mapMovieFromServiceToUIMovie } from "src/mappers/movie-form.mapper";
 
 const MovieService = {
   getMovies: async (params, signal) => {
@@ -13,7 +14,7 @@ const MovieService = {
         },
         signal
       });
-      return response.data.data;
+      return response.data.data.map(item => mapMovieFromServiceToUIMovie(item));
     } catch (error) {
       console.log(error);
       if (error.message === 'canceled') {
@@ -25,7 +26,7 @@ const MovieService = {
   getMovieById: async (id) => {
     try {
       const response = await axios.get(`${CommonConstants.BASE_URL}/${id}`);
-      return response.data;
+      return mapMovieFromServiceToUIMovie(response.data);
     } catch (error) {
       console.log(error);
     }

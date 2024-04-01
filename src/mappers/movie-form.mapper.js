@@ -1,3 +1,5 @@
+import { formatTime } from "src/formatters/time.formatter";
+
 export const mapMovieToFormData = (movie, genres) => {
   return {
     title: movie ? movie.title : '',
@@ -18,3 +20,11 @@ export const mapFormDataToSubmitRequest = (data) => {
     genres: data.genres.map(genre => genre.value)
   };
 };
+
+export const mapMovieFromServiceToUIMovie = (movie) => {
+  return {
+    ...movie,
+    release_date: new Date(movie.release_date).getFullYear(),
+    runtime: formatTime(movie.runtime)
+  }
+}

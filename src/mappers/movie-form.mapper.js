@@ -12,11 +12,10 @@ export const mapMovieToFormData = (movie, genres) => {
   }
 };
 
-export const mapFormDataToSubmitRequest = (data) => {
+export const mapFormDataToSubmitRequest = (data, movie) => {
   return {
+    ...movie,
     ...data,
-    vote_average: +data.vote_average,
-    runtime: +data.runtime,
     genres: data.genres.map(genre => genre.value)
   };
 };

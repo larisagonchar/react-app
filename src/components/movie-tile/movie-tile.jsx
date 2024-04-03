@@ -4,8 +4,11 @@ import ContextMenu from 'src/components/context-menu/context-menu';
 import MovieGenre from 'src/components/movie-details/elements/movie-genre/movie-genre';
 import MovieImage from 'src/components/movie-details/elements/movie-image/movie-image';
 import MovieTileInfo from './elements/movie-tile-info';
+import { useNavigate } from 'react-router-dom';
 
 const MovieTile = ({ movie, onClick }) => {
+  const navigate = useNavigate();
+
   const [isContextMenuOpen, setIsContextMenuOpen] = useState(false);
 
   const handleContextMenuClick = (e) => {
@@ -15,6 +18,12 @@ const MovieTile = ({ movie, onClick }) => {
 
   const handleMovieTileClick = () => {
     onClick(movie.id);
+  }
+
+  const handleEditMovieClick = (e) => {
+    navigate(`${movie.id}/edit`);
+    setIsContextMenuOpen(!isContextMenuOpen);
+    e.stopPropagation();
   }
 
   return (
@@ -27,7 +36,7 @@ const MovieTile = ({ movie, onClick }) => {
         <div></div>
       </div>
 
-      {isContextMenuOpen && <ContextMenu onClick={handleContextMenuClick} />}
+      {isContextMenuOpen && <ContextMenu onContextMenuClick={handleContextMenuClick} onEditClick={handleEditMovieClick} />}
 
       <div className='movie-tile__info'>
         <MovieTileInfo title={movie.title} releaseDate={movie.release_date} />

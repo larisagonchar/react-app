@@ -7,3 +7,7 @@
   background-color: var(--primary-color);
   padding: var(--indentation-size-medium) var(--indentation-size-extra-large);
 }
+
+.button:disabled {
+  opacity: 0.2;
+}

@@ -13,7 +13,7 @@ const TextArea = ({ id, placeholder, label, errorMessage, inputClass, register }
         placeholder={placeholder}
         {...register(id, { required: 'This field is required' })}
       />
-      <ErrorLabel errorMessage={errorMessage} />
+      <ErrorLabel label={errorMessage} />
     </div>
   );
 };

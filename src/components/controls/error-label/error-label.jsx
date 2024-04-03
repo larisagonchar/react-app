@@ -1,9 +1,9 @@
 import React from 'react';
 import './error-label.css';
 
-const ErrorLabel = ({ errorMessage }) => {
+const ErrorLabel = ({ label }) => {
   return (
-    <span data-testid='error' className='error-label'>{errorMessage}</span>
+    <span data-testid='error' className='error-label'>{label}</span>
   );
 };
 

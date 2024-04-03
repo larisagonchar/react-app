@@ -1,6 +1,8 @@
 import { GENRE_ALL } from "src/constants/genre.constants";
 
-export const getSelectedGenresHelper = (selectedGenre, selectedGenres) => {
+export const getSelectedGenresHelper = (selectedGenre, genres) => {
+  const selectedGenres = [...genres];
+
   if (selectedGenre === GENRE_ALL) {
     return [selectedGenre];
   }

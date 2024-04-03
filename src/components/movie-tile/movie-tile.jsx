@@ -14,7 +14,7 @@ const MovieTile = ({ movie, onClick }) => {
   };
 
   const handleMovieTileClick = () => {
-    onClick(movie);
+    onClick(movie.id);
   }
 
   return (

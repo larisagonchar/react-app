@@ -1,15 +1,23 @@
 import React from 'react';
 import './movie-details.css';
-import { formatTime } from 'src/formatters/time.formatter';
 import MovieGenre from './elements/movie-genre/movie-genre';
 import MovieImage from './elements/movie-image/movie-image';
 import Title from '../title/title';
 import Header from '../header/header';
+import { useLoaderData, useNavigate, useSearchParams } from 'react-router-dom';
 
-const MovieDetails = ({ selectedMovie, onSearch }) => {
+const MovieDetails = () => {
+  const selectedMovie = useLoaderData();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+  const handleSearchClick = () => {
+    navigate(`/?${searchParams}`);
+  };
+
   return (
     <section className='movie-details'>
-      <Header isSearch={true} onSearch={onSearch}/>
+      <Header isSearchButtonVisible={true} onSearch={handleSearchClick}/>
 
       <div className='movie-details__main'>
         <MovieImage image={selectedMovie.poster_path}/>
@@ -23,8 +31,8 @@ const MovieDetails = ({ selectedMovie, onSearch }) => {
           <MovieGenre genres={selectedMovie.genres}/>
 
           <div className='movie-details__container'>
-            <span className='movie-details__year'>{new Date(selectedMovie.release_date).getFullYear()}</span>
-            <span className='movie-details__time'>{formatTime(selectedMovie.runtime)}</span>
+            <span className='movie-details__year'>{selectedMovie.release_date}</span>
+            <span className='movie-details__time'>{selectedMovie.runtime}</span>
           </div>
 
           <span className='movie-details__description'>{selectedMovie.overview}</span>

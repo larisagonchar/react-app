@@ -14,7 +14,7 @@ const Input = ({ id, placeholder, type, label, errorMessage, register, inputClas
         type={type}
         {...register(id, { required: 'This field is required' })}
       />
-      { errorMessage && <ErrorLabel errorMessage={errorMessage} /> }
+      { errorMessage && <ErrorLabel label={errorMessage} /> }
     </div>
   );
 };

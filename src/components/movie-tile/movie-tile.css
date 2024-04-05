@@ -6,12 +6,10 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  transition: transform 0.5s ease;
   max-width: var(--width);
 }
 
 .movie-tile:hover {
-  transform: scale(1.1);
   cursor: pointer;
 }
 

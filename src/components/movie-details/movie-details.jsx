@@ -5,11 +5,14 @@ import MovieImage from './elements/movie-image/movie-image';
 import Title from '../title/title';
 import Header from '../header/header';
 import { useLoaderData, useNavigate, useSearchParams } from 'react-router-dom';
+import { mapMovieFromServiceToUIMovie } from 'src/mappers/movie-form.mapper';
 
 const MovieDetails = () => {
   const selectedMovie = useLoaderData();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+
+  const movie = mapMovieFromServiceToUIMovie(selectedMovie);
 
   const handleSearchClick = () => {
     navigate(`/?${searchParams}`);
@@ -20,22 +23,22 @@ const MovieDetails = () => {
       <Header isSearchButtonVisible={true} onSearch={handleSearchClick}/>
 
       <div className='movie-details__main'>
-        <MovieImage image={selectedMovie.poster_path}/>
+        <MovieImage image={movie.poster_path}/>
 
         <div className='movie-details__content'>
           <div className='movie-details__container'>
-            <Title title={selectedMovie.title}/>
-            <span className='movie-details__rating'>{selectedMovie.vote_average}</span>
+            <Title title={movie.title}/>
+            <span className='movie-details__rating'>{movie.vote_average}</span>
           </div>
 
-          <MovieGenre genres={selectedMovie.genres}/>
+          <MovieGenre genres={movie.genres}/>
 
           <div className='movie-details__container'>
-            <span className='movie-details__year'>{selectedMovie.release_date}</span>
-            <span className='movie-details__time'>{selectedMovie.runtime}</span>
+            <span className='movie-details__year'>{movie.release_date}</span>
+            <span className='movie-details__time'>{movie.runtime}</span>
           </div>
 
-          <span className='movie-details__description'>{selectedMovie.overview}</span>
+          <span className='movie-details__description'>{movie.overview}</span>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import './textarea.css';
 import Label from '../label/label';
 import ErrorLabel from '../error-label/error-label';
 
-const TextArea = ({ id, placeholder, label, errorMessage, inputClass, register }) => {
+const TextArea = ({ id, placeholder, label, errorMessage, inputClass, register, validationRules }) => {
   return (
     <div className={inputClass}>
       <Label inputId={id} label={label} />
@@ -11,9 +11,9 @@ const TextArea = ({ id, placeholder, label, errorMessage, inputClass, register }
         id={id}
         className='textarea'
         placeholder={placeholder}
-        {...register(id, { required: 'This field is required' })}
+        {...register(id, validationRules)}
       />
-      <ErrorLabel label={errorMessage} />
+      { errorMessage && <ErrorLabel label={errorMessage} /> }
     </div>
   );
 };

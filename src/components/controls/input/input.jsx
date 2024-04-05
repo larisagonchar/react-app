@@ -3,7 +3,7 @@ import './input.css';
 import Label from '../label/label';
 import ErrorLabel from '../error-label/error-label';
 
-const Input = ({ id, placeholder, type, label, errorMessage, register, inputClass }) => {
+const Input = ({ id, placeholder, type, label, errorMessage, register, inputClass, validationRules }) => {
   return (
     <div className={inputClass}>
       {label && <Label inputId={id} label={label} /> }
@@ -12,7 +12,7 @@ const Input = ({ id, placeholder, type, label, errorMessage, register, inputClas
         className='input'
         placeholder={placeholder}
         type={type}
-        {...register(id, { required: 'This field is required' })}
+        {...register(id, validationRules )}
       />
       { errorMessage && <ErrorLabel label={errorMessage} /> }
     </div>

@@ -4,15 +4,21 @@ import { createPortal } from 'react-dom';
 import Title from '../title/title';
 import ButtonClose from '../controls/button-close/button-close';
 import FocusTrap from 'focus-trap-react';
+import { useNavigate } from 'react-router-dom';
 
-const Dialog = ({ title, children, onClose }) => {
+const Dialog = ({ title, children }) => {
+  const navigate = useNavigate();
+
+  const handleDialogClose = () => {
+    navigate('/');
+  };
 
   const dialog = (
     <FocusTrap>
       <dialog className='dialog'>
         <div className='dialog__content'>
           <div className='dialog__header'>
-            <ButtonClose onClick={onClose} />
+            <ButtonClose onClose={handleDialogClose} />
             <Title title={title} />
           </div>
           {children}

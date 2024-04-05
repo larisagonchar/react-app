@@ -26,7 +26,23 @@ const MovieService = {
   getMovieById: async (id) => {
     try {
       const response = await axios.get(`${CommonConstants.BASE_URL}/${id}`);
-      return mapMovieFromServiceToUIMovie(response.data);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  addMovie: async (body) => {
+    try {
+      await axios.post(`${CommonConstants.BASE_URL}`, body);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  editMovie: async (body) => {
+    try {
+      await axios.put(`${CommonConstants.BASE_URL}`, body);
     } catch (error) {
       console.log(error);
     }
